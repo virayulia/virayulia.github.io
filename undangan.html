@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Spesial</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="invitation">
+      <h1>Undangan Spesial</h1>
+      <p>Hai <strong id="namaTamu">Tamu Istimewa</strong>,</p>
+      <p>Kami mengundang Anda ke acara spesial kami.</p>
+      <p>Jangan lewatkan momen berharga ini!</p>
+      <button
+        onclick="alert('Terima kasih, ' + document.getElementById('namaTamu').innerText + '!')"
+      >
+        Konfirmasi Kehadiran
+      </button>
+    </div>
+
+    <script>
+      // Ambil parameter URL "sebagai"
+      const urlParams = new URLSearchParams(window.location.search);
+      const nama = urlParams.get("sebagai");
+
+      // Jika ada parameter nama, ubah teksnya
+      if (nama) {
+        document.getElementById("namaTamu").innerText = nama;
+      }
+    </script>
+  </body>
+</html>
